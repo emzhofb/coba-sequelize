@@ -12,20 +12,12 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    return queryInterface.bulkInsert('Users', [{
-      nama: 'John Doe',
-      email: 'john@gmail.com',
-      alamat: 'jakarta',
-      telp: 1234,
-      daerahId: 1,
+    return queryInterface.bulkInsert('Daerahs', [{
+      nama: 'Jakarta',
       createdAt: new Date(),
       updatedAt: new Date(),
     },{
-      nama: 'Budi',
-      email: 'budi@gmail.com',
-      alamat: 'lampung',
-      telp: 4321,
-      daerahId: 2,
+      nama: 'Bandung',
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});
@@ -39,6 +31,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-    return queryInterface.bulkDelete('Users', null, {});
+    return queryInterface.bulkDelete('Daerahs', null, {});
   }
 };
