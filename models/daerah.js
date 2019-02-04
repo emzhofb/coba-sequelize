@@ -7,5 +7,17 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Daerah.hasMany(sequelize.models.User)
   };
+  Daerah.beforeCreate(daerah => {
+    daerah.nama = daerah.nama.toUpperCase()
+    return Daerah
+  })
+
+  Daerah.afterDestroy(daerah => {
+    return sequelize.models.User.destroy({
+      where: {
+        daerahId: daerah.id
+      }
+    })
+  })
   return Daerah;
 };
